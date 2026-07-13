@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@source "../app/**/*.{js,ts,jsx,tsx}";
+@source "../components/**/*.{js,ts,jsx,tsx}";
+
+@theme {
+  --color-canvas: #fffaf0;
+  --color-primary: #ff1493;
+  --color-ink: #0a0a0a;
+  --color-body: #3a3a3a;
+  --color-muted: #6a6a6a;
+  --color-surfaceSoft: #faf5e8;
+  --color-surfaceCard: #f5f0e0;
+  --color-brandPink: #ff4d8b;
+  --color-brandTeal: #1a3a3a;
+  --color-brandLavender: #b8a4ed;
+  --color-brandPeach: #ffb084;
+  --color-brandOchre: #e8b94a;
+
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  --font-display: var(--font-body), "Inter", "system-ui", sans-serif;
+  --font-body: var(--font-body), "Inter", "system-ui", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+/* GSAP utility classes */
+.invisible-on-load {
+  visibility: hidden;
+}
+
+/* Typography defaults */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
