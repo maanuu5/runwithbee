@@ -41,11 +41,11 @@ export function WeeklySchedule({ runs }: WeeklyScheduleProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         {runs.map((run, idx) => (
           <div
             key={idx}
-            className="bg-ink text-white p-10 rounded-[2rem] flex flex-col justify-between group hover:-translate-y-2 transition-transform shadow-[4px_4px_0px_0px_rgba(255,20,147,1)] border-2 border-ink hover:shadow-[8px_8px_0px_0px_rgba(255,20,147,1)] cursor-pointer"
+            className="min-w-[85vw] sm:min-w-[320px] md:min-w-0 bg-ink text-white p-10 rounded-[2rem] flex flex-col justify-between group hover:-translate-y-2 transition-transform shadow-[4px_4px_0px_0px_rgba(255,20,147,1)] border-2 border-ink hover:shadow-[8px_8px_0px_0px_rgba(255,20,147,1)] cursor-pointer snap-center"
           >
             <div>
               <h3 className="text-3xl font-black mb-2 text-brandPink uppercase tracking-tight">

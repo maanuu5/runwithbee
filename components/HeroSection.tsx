@@ -16,10 +16,10 @@ export function HeroSection() {
       </div>
 
       {/* Track Dome */}
-      <div className="mt-8 w-full max-w-4xl mx-auto h-32 md:h-48 bg-brandPink rounded-t-[300px] border-b-0 relative flex justify-center items-end border-t-4 border-l-4 border-r-4 border-brandPink overflow-hidden hero-text invisible-on-load z-10">
-        <div className="absolute left-[90px] right-[90px] h-[80%] rounded-t-[250px] border-t-4 border-l-4 border-r-4 border-white/60 bottom-0" />
-        <div className="absolute left-[180px] right-[180px] h-[60%] rounded-t-[200px] border-t-4 border-l-4 border-r-4 border-white/60 bottom-0" />
-        <div className="absolute left-[270px] right-[270px] h-[40%] bg-canvas rounded-t-[150px] bottom-0 border-t-4 border-l-4 border-r-4 border-white/60" />
+      <div className="mt-8 w-full max-w-4xl mx-auto h-32 md:h-48 bg-brandPink rounded-t-[50%] sm:rounded-t-[300px] border-b-0 relative flex justify-center items-end border-t-4 border-l-4 border-r-4 border-brandPink overflow-hidden hero-text invisible-on-load z-10">
+        <div className="absolute left-[10%] right-[10%] h-[80%] rounded-t-[50%] sm:rounded-t-[250px] border-t-4 border-l-4 border-r-4 border-white/60 bottom-0" />
+        <div className="absolute left-[20%] right-[20%] h-[60%] rounded-t-[50%] sm:rounded-t-[200px] border-t-4 border-l-4 border-r-4 border-white/60 bottom-0" />
+        <div className="absolute left-[30%] right-[30%] h-[40%] bg-canvas rounded-t-[50%] sm:rounded-t-[150px] bottom-0 border-t-4 border-l-4 border-r-4 border-white/60" />
       </div>
     </section>
   );

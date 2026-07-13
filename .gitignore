@@ -39,3 +39,7 @@ next-env.d.ts
 
 # OS
 Desktop.ini
+
+# dev notes
+DESIGN-clay.md
+TODO.md
