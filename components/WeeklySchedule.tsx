@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { Run } from "../lib/types";
 
 interface WeeklyScheduleProps {
@@ -6,6 +9,16 @@ interface WeeklyScheduleProps {
 
 /** Weekly schedule cards section. */
 export function WeeklySchedule({ runs }: WeeklyScheduleProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const container = e.currentTarget;
+    const scrollLeft = container.scrollLeft;
+    const itemWidth = container.scrollWidth / runs.length;
+    const index = Math.round(scrollLeft / itemWidth);
+    setActiveIndex(Math.min(Math.max(index, 0), runs.length - 1));
+  };
+
   return (
     <section
       id="schedule"
@@ -34,14 +47,17 @@ export function WeeklySchedule({ runs }: WeeklyScheduleProps) {
           Schedule
         </h2>
         <div className="max-w-sm">
-          <p className="text-body font-bold mb-6 text-lg">
+          <p className="text-body font-bold mb-4 text-lg">
             Join us every week for guided runs, community support, and good
             vibes. All paces welcome.
           </p>
         </div>
       </div>
 
-      <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <div 
+        className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        onScroll={handleScroll}
+      >
         {runs.map((run, idx) => (
           <div
             key={idx}
@@ -60,6 +76,20 @@ export function WeeklySchedule({ runs }: WeeklyScheduleProps) {
               RSVP
             </button>
           </div>
+        ))}
+      </div>
+
+      {/* Subtle mobile scroll indicator below cards */}
+      <div className="md:hidden flex justify-center items-center gap-1.5 mt-2">
+        {runs.map((_, i) => (
+          <div
+            key={i}
+            className={`rounded-full transition-all duration-300 ${
+              i === activeIndex
+                ? "w-2 h-2 bg-brandPink"
+                : "w-1.5 h-1.5 bg-ink/20"
+            }`}
+          />
         ))}
       </div>
     </section>
